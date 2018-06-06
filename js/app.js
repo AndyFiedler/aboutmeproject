@@ -72,7 +72,7 @@ else {
 
 
 
-//number guess sample
+//number guess looop
 var guess = prompt('What is my favorite number? (Under 10)');
 console.log('Guess is: ' + guess);
 var guessCount = 1;
@@ -122,65 +122,20 @@ if (guess === null) {
     alert('It took ' + guessCount + ' guesses to get it right!');
   }
 
-}
 
-
-
-
-
-
-
-  
-
-  //array sample
-  var names = ['ANDY', 'BEN', 'CLAIRE', 'RANDY','JANETTE', 'RONDO', 'SCOUT', 'BEAN'];
+{
+//array sample
+var names = ['ANDY', 'BEN', 'CLAIRE', 'RANDY','JANETTE', 'RONDO', 'SCOUT', 'BEAN'];
 console.log(names.length);
 var nameGuess = prompt('Name someone in Fiedler Family!');
 var nameGuessTrimmedToUpper = nameGuess.toUpperCase().trim();
 
 if (names.indexOf(nameGuessTrimmedToUpper) >= 0) {
-  alert('Yes! Unfortunately' + nameGuess + ' is in our family!');
+  alert('Yes! Unfortunately ' + nameGuess + ' is in our family!');
 } else {
   alert('WRONG. We are very selective.');
+  correctCount++;
 }
 
 alert('All Fiedler family members: ' + names.join(', '));
-
-  var promptWarning = 'Wrong!';
-  if (guess > 2) {
-    promptWarning = 'Too high!';
-  } else if (guess < 0) {
-    promptWarning = 'Weirdos like negative numbers!';
-  } else {
-    promptWarning = 'Too low!';
-  }
-  console.log(promptWarning);
-
-  guess = prompt(promptWarning + ' Try again: what is my favorite number?');
-
-  console.log('Guess is: ' + guess);
-
-  guessCount = guessCount + 1;
-
-  console.log('guessCount is ' + guessCount);
-  console.log('about to return to top of while loop');
-
-
-console.log('done guessing (while loop is finished)');
-
-// If they cancelled the prompt...
-if (guess === null) {
-
-  alert('Wimp. My favorite number is 2, obviously.');
-
-} else {
-  // They must have gotten the answer right
-  console.log('not a wimp');
-
-  if (guessCount === 1) {
-    alert('Right on the first try!');
-  } else {
-    alert('It took ' + guessCount + ' guesses to get it right!');
-  }
-
-}
+alert('You got ' + correctCount + 'out of 7 questions right');
