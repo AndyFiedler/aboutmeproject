@@ -1,6 +1,5 @@
-p {
-    color: rgb(187, 110, 23);
-
+p {color: orangered;
+    font-style: italic
   }
 
   body{background-color:turquoise;
@@ -14,4 +13,8 @@ p {
   }
   H2 {color: orangered;
         font-family: Arial, Helvetica, sans-serif
+  }
+  H3 {color: midnightblue;
+
+
   }

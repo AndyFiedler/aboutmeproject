@@ -1,9 +1,10 @@
 'use strict'
-
+var correctCount = 0;
 var answer =prompt('Mr. Fiedler prefers his first name pronounced Andy. True/False, T/F');
 var sanitizedAnswer1 = answer.toUpperCase().trim();
 if (sanitizedAnswer1 === 'TRUE'|| sanitizedAnswer1 ==='T') {
     alert('Yes. Dont get cocky, kid. Only the first question.');
+        correctCount++;
 }
 else if (sanitizedAnswer1 === 'F' || sanitizedAnswer1 ==='FALSE') {
     alert ('User please read more carefully. ');
@@ -17,6 +18,7 @@ var answer =prompt('Mr. Fiedler is a people person. (T/F)');
 var sanitizedAnswer2 = answer.toUpperCase().trim()
 if (sanitizedAnswer2 === 'TRUE'|| sanitizedAnswer2 ==='T') {
     alert('Yes. Whatever. Good job.');
+    correctCount++;
 }
 else if (sanitizedAnswer2 === 'F' || sanitizedAnswer2 ==='FALSE') {
     alert ('User, do you know how to read?. ');
@@ -30,6 +32,7 @@ var answer =prompt('Mr. Fiedler hates his dog more than anyone, or anything. (T/
 var sanitizedAnswer3 = answer.toUpperCase().trim()
 if (sanitizedAnswer3 === 'TRUE'|| sanitizedAnswer3 ==='T') {
     alert('Yes. That dog is Satan');
+    correctCount++;
 }
 else if (sanitizedAnswer3 === 'F' || sanitizedAnswer3 ==='FALSE') {
     alert ('User, TRY HARDER. ');
@@ -39,10 +42,11 @@ else {
 }
 
 
-var answer =prompt('Mr. Fiedler has no specific plans for his future.(T/F)');
+var answer =prompt('Mr. Fiedler has specific plans for his future.(T/F)');
 var sanitizedAnswer4 = answer.toUpperCase().trim()
 if (sanitizedAnswer4 === 'TRUE'|| sanitizedAnswer4 ==='T') {
     alert('Yes. Like really specific.');
+    correctCount;
 }
 else if (sanitizedAnswer4 === 'F' || sanitizedAnswer4 ==='FALSE') {
     alert ('User, your attempts are laughable. ');
@@ -56,6 +60,7 @@ var answer =prompt('Mr. Fiedler cannot abide human younglings.(T/F)')
 var sanitizedAnswer5 = answer.toUpperCase().trim()
 if (sanitizedAnswer4 === 'TRUE'|| sanitizedAnswer4 ==='T') {
     alert('No, user. Kids are awesome. Thanks for trying I guess...');
+    correctCount++;
 }
 else if (sanitizedAnswer4 === 'F' || sanitizedAnswer4 ==='FALSE') {
     alert ('Yes. Obviously.');
@@ -68,11 +73,11 @@ else {
 
 
 //number guess sample
-var guess = prompt('What is my favorite number?');
+var guess = prompt('What is my favorite number? (Under 10)');
 console.log('Guess is: ' + guess);
 var guessCount = 1;
 
-while (guess !== '2') {
+while (guess !== '9') {
 
   if (guess === null) {
     console.log('Guess is null; breaking');
@@ -80,6 +85,44 @@ while (guess !== '2') {
     // Escape the loop!
     break;
   }
+  var promptWarning = 'Wrong!';
+  if (guess > 2) {
+    promptWarning = 'Too high!';
+  } else if (guess < 0) {
+    promptWarning = 'No negative numbers. Positive people like positive numbers!';
+  } else {
+    promptWarning = 'Too low!';
+  }
+  console.log(promptWarning);
+
+  guess = prompt(promptWarning + ' Try again: what is my favorite number?');
+
+  console.log('Guess is: ' + guess);
+
+  guessCount = guessCount + 1;
+
+  console.log('guessCount is ' + guessCount);
+  console.log('about to return to top of while loop');
+}
+
+console.log('done guessing (while loop is finished)');
+
+// If they cancelled the prompt...
+if (guess === null) {
+
+  alert('Rude! My favorite number is 9, if you even care.');
+
+} else {
+  // They must have gotten the answer right
+  console.log('not rude');
+
+  if (guessCount === 1) {
+    alert('Right on the first try!');
+  } else {
+    alert('It took ' + guessCount + ' guesses to get it right!');
+  }
+
+}
 
 
 
@@ -102,3 +145,42 @@ if (names.indexOf(nameGuessTrimmedToUpper) >= 0) {
 }
 
 alert('All Fiedler family members: ' + names.join(', '));
+
+  var promptWarning = 'Wrong!';
+  if (guess > 2) {
+    promptWarning = 'Too high!';
+  } else if (guess < 0) {
+    promptWarning = 'Weirdos like negative numbers!';
+  } else {
+    promptWarning = 'Too low!';
+  }
+  console.log(promptWarning);
+
+  guess = prompt(promptWarning + ' Try again: what is my favorite number?');
+
+  console.log('Guess is: ' + guess);
+
+  guessCount = guessCount + 1;
+
+  console.log('guessCount is ' + guessCount);
+  console.log('about to return to top of while loop');
+
+
+console.log('done guessing (while loop is finished)');
+
+// If they cancelled the prompt...
+if (guess === null) {
+
+  alert('Wimp. My favorite number is 2, obviously.');
+
+} else {
+  // They must have gotten the answer right
+  console.log('not a wimp');
+
+  if (guessCount === 1) {
+    alert('Right on the first try!');
+  } else {
+    alert('It took ' + guessCount + ' guesses to get it right!');
+  }
+
+}
