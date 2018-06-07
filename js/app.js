@@ -1,6 +1,8 @@
 'use strict'
+
+/*
 var correctCount = 0;
-var answer =prompt('Mr. Fiedler prefers his first name pronounced Andy. True/False, T/F');
+var answer = prompt('Mr. Fiedler prefers his first name pronounced Andy. True/False, T/F');
 var sanitizedAnswer1 = answer.toUpperCase().trim();
 if (sanitizedAnswer1 === 'TRUE'|| sanitizedAnswer1 ==='T') {
     alert('Yes. Dont get cocky, kid. Only the first question.');
@@ -12,9 +14,72 @@ else if (sanitizedAnswer1 === 'F' || sanitizedAnswer1 ==='FALSE') {
 else {
     alert('What was that!? Maybe give up now.');
 }
+*/
+
+var userName = 'Freeman';
+var correctAnswer = 0;
+var questionNumber = 0;
+
+function askQuestion(questionText, correctWord, correctMessage, incorrectMessage) {
+    questionNumber++;
+
+    var correctLetter = correctWord[0];
+
+    var answer = prompt(questionText).toUpperCase();
+
+    if (answer === correctWord || answer === correctLetter) {
+        alert('Yes. Dont get cocky, kid. Only the first question.' + userName + '! ' + correctMessage);
+    correctAnswer++;
+    } else {
+        alert(incorrectMessage + 'User please read more carefully. ' + '?');
+    }
+
+    console.log('User\'s response is "' + answer + '" to question ' + questionNumber + '.');
+}
 
 
-var answer =prompt('Mr. Fiedler is a people person. (T/F)');
+
+
+
+var questionText = 'Is Mr. Fiedler a people person.? True/False, T/F'
+var correctWord = 'True';
+var correctMessage = 'that was correct....';
+var incorrectMessage = 'WRONG!! ';
+
+askQuestion(questionText, correctWord, correctMessage, incorrectMessage);
+
+function askQuestion(questionText, correctWord, correctMessage, incorrectMessage) {
+    questionNumber++;
+
+    var correctLetter = correctWord[0];
+
+    var answer = prompt(questionText).toUpperCase();
+
+    if (answer === correctWord || answer === correctLetter) {
+        alert('Yes.  Whatever.  Good job. ' + userName + '! ' + correctMessage);
+    correctAnswer++;
+    } else {
+        alert(incorrectMessage + 'user, do you know how to read ' + '?');
+    }
+
+    console.log('User\'s response is "' + answer + '" to question ' + questionNumber + '.');
+}
+
+askQuestion('Mr. Fiedler is a people person!', 'True', 'You are right!', 'Wrong ');
+
+/*
+add(1, 2)
+
+function add (a, b) {
+    return a + b;
+}
+*/
+
+
+
+//function 
+/*
+var answer = prompt('Mr. Fiedler is a people person. (T/F)');
 var sanitizedAnswer2 = answer.toUpperCase().trim()
 if (sanitizedAnswer2 === 'TRUE'|| sanitizedAnswer2 ==='T') {
     alert('Yes. Whatever. Good job.');
@@ -28,7 +93,7 @@ else {
 }
 
 
-var answer =prompt('Mr. Fiedler hates his dog more than anyone, or anything. (T/F)');
+var answer = prompt('Mr. Fiedler hates his dog more than anyone, or anything. (T/F)');
 var sanitizedAnswer3 = answer.toUpperCase().trim()
 if (sanitizedAnswer3 === 'TRUE'|| sanitizedAnswer3 ==='T') {
     alert('Yes. That dog is Satan');
@@ -42,7 +107,7 @@ else {
 }
 
 
-var answer =prompt('Mr. Fiedler has specific plans for his future.(T/F)');
+var answer = prompt('Mr. Fiedler has specific plans for his future.(T/F)');
 var sanitizedAnswer4 = answer.toUpperCase().trim()
 if (sanitizedAnswer4 === 'TRUE'|| sanitizedAnswer4 ==='T') {
     alert('Yes. Like really specific.');
@@ -56,7 +121,7 @@ else {
 }
 
 
-var answer =prompt('Mr. Fiedler cannot abide human younglings.(T/F)')
+var answer = prompt('Mr. Fiedler cannot abide human younglings.(T/F)')
 var sanitizedAnswer5 = answer.toUpperCase().trim()
 if (sanitizedAnswer4 === 'TRUE'|| sanitizedAnswer4 ==='T') {
     alert('No, user. Kids are awesome. Thanks for trying I guess...');
@@ -138,3 +203,6 @@ if (names.indexOf(nameGuessTrimmedToUpper) >= 0) {
 alert('All Fiedler family members: ' + names.join(', '));
 alert('You got ' + correctCount + 'out of 7 questions right');
 while (guessCount >6) prompt('You have exceeded your guesses for this particular question.')
+
+
+*/
