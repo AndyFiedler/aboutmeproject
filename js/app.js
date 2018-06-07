@@ -129,13 +129,12 @@ var names = ['ANDY', 'BEN', 'CLAIRE', 'RANDY','JANETTE', 'RONDO', 'SCOUT', 'BEAN
 console.log(names.length);
 var nameGuess = prompt('Name someone in Fiedler Family!');
 var nameGuessTrimmedToUpper = nameGuess.toUpperCase().trim();
-
+var guesscount = 1;
 if (names.indexOf(nameGuessTrimmedToUpper) >= 0) {
   alert('Yes! Unfortunately ' + nameGuess + ' is in our family!');
 } else {
   alert('WRONG. We are very selective.');
   correctCount++;
-}
-
 alert('All Fiedler family members: ' + names.join(', '));
 alert('You got ' + correctCount + 'out of 7 questions right');
+while (guessCount >6) prompt('You have exceeded your guesses for this particular question.')
